@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // RokuDevelopers Useful Slack Shortcuts : aka RUSS
-// based on slack-genius
+// based on slack-genius https://github.com/mager/slack-genius/
 // 
 
 // Define the URLs used in responses: //
