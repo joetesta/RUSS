@@ -24,7 +24,7 @@ app.get('/', function(req, res){
 
 // search-docs: https://developer.roku.com/search?qs=[### Search text ###]
 app.post('/docs', function(req, res){
-//  console.log('Node app got docs search, input req text: ', req.body.text);
+  console.log('Node app got docs search, input req text: ', req.body.text);
   var output_url = search_docs_url + encodeURIComponent(req.body.text);
   output_to_channel(output_url, res)
 });
