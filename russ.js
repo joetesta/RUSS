@@ -6,7 +6,8 @@
 // Define the URLs used in responses: //
 var search_docs_url = 'https://developer.roku.com/search?qs=';
 var forum_url = 'https://community.roku.com/t5/forums/searchpage/tab/message?q=';
-var bug_url = 'https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program';
+var bug_url = forum_url + encodeURIComponent("bug ");
+// original bug URL: 'https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program';
 var feature_url = 'https://community.roku.com/t5/Suggest-a-Feature/bd-p/Wishlist';
 
 // Set up listening server on port 8081: //
@@ -41,7 +42,8 @@ app.post('/forum', function(req, res){
 // Bug Report: https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program
 app.post('/bug-report', function(req, res){
 //  console.log('Node app got Bug report request.');
-  output_to_channel(bug_url, res)
+  var output_url = bug_url + encodeURIComponent(req.body.text)
+  output_to_channel(output_url, res)
 });
 
 
